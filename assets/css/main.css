@@ -1190,7 +1190,7 @@ border-radius: 15px;
 }
 
 #hero p {
-  background: linear-gradient(to right,  #000d10, rgb(20, 190, 213)); 
+  background: linear-gradient(to right,  #000d10, rgb(255, 255, 255)); 
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold; 
