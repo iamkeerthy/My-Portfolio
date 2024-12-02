@@ -1189,12 +1189,12 @@ border-radius: 15px;
   font-size: 15px;
 }
 
-#hero p {
-  background: linear-gradient(to right,  #61044f, rgb(216, 86, 239)); 
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold; 
- 
+#hero h2 {
+  background: linear-gradient(to right, #0d0289, #ff6a00); /* Updated gradient colors */
+-webkit-background-clip: text;
+color: transparent;
+font-weight: bold;
+
 }
 
 #contact p1 {
