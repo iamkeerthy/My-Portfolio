@@ -4,7 +4,7 @@ Welcome to my portfolio! This website showcases my work and projects in software
 
 You can view the live portfolio [here](https://iamkeerthy.vercel.app/#about).
 
-![Portfolio Screenshot](./path/to/your-screenshot.png)
+![Portfolio Screenshot](https://github.com/iamkeerthy/My-Portfolio/blob/master/port2.jpg)
 
 ## Technologies Used 💻
 
