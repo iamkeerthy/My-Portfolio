@@ -9,6 +9,39 @@
 (function() {
   "use strict";
 
+  const body = document.body;
+  const introEnterBtn = document.querySelector('#intro-enter');
+  const heroSection = document.querySelector('#hero');
+
+  function revealSite(scrollToHero = false) {
+    if (!body.classList.contains('intro-active')) return;
+
+    body.classList.remove('intro-active');
+    body.classList.add('intro-complete');
+
+    if (scrollToHero && heroSection) {
+      window.setTimeout(() => {
+        heroSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 280);
+    }
+  }
+
+  if (introEnterBtn) {
+    introEnterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      revealSite(true);
+    });
+  }
+
+  window.addEventListener('load', () => {
+    if (window.location.hash && window.location.hash !== '#intro') {
+      revealSite(false);
+    }
+  });
+
   /**
    * Header toggle
    */
@@ -19,7 +52,9 @@
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
