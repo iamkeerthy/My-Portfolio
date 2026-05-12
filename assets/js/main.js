@@ -40,23 +40,35 @@
   /* ── Mobile nav toggle ───────────────────── */
   const navToggle = document.getElementById("navToggle");
   const navmenu   = document.getElementById("navmenu");
+  const navClose  = document.getElementById("navClose");
+  const navBackdrop = document.getElementById("navBackdrop");
   const toggleIcon = navToggle ? navToggle.querySelector("i") : null;
 
   function closeNav() {
     if (!navmenu) return;
     navmenu.classList.remove("open");
+    if (navBackdrop) navBackdrop.classList.remove("open");
+    body.classList.remove("nav-open");
     if (toggleIcon) { toggleIcon.classList.add("bi-list"); toggleIcon.classList.remove("bi-x"); }
+  }
+
+  function openNav() {
+    if (!navmenu) return;
+    navmenu.classList.add("open");
+    if (navBackdrop) navBackdrop.classList.add("open");
+    body.classList.add("nav-open");
+    if (toggleIcon) { toggleIcon.classList.add("bi-x"); toggleIcon.classList.remove("bi-list"); }
   }
 
   if (navToggle) {
     navToggle.addEventListener("click", () => {
-      const isOpen = navmenu.classList.toggle("open");
-      if (toggleIcon) {
-        toggleIcon.classList.toggle("bi-x", isOpen);
-        toggleIcon.classList.toggle("bi-list", !isOpen);
-      }
+      if (navmenu && navmenu.classList.contains("open")) closeNav();
+      else openNav();
     });
   }
+
+  if (navClose) navClose.addEventListener("click", closeNav);
+  if (navBackdrop) navBackdrop.addEventListener("click", closeNav);
 
   /* Close mobile nav on link click */
   document.querySelectorAll("#navmenu a").forEach((link) =>

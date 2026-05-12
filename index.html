@@ -46,16 +46,36 @@
           <i class="bi bi-list"></i>
         </button>
         <nav class="navmenu" id="navmenu">
+          <div class="mobile-nav-head">
+            <a href="#hero" class="mobile-nav-brand">DK<span class="brand-dot"></span></a>
+            <button class="mobile-nav-close" id="navClose" aria-label="Close navigation">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
           <ul>
+            <li class="mobile-only"><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Projects</a></li>
             <li><a href="#certifications">Certs</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <div class="mobile-nav-connect">
+            <h3>Connect</h3>
+            <a href="mailto:iamkeerthyy@gmail.com"><i class="bi bi-envelope"></i> iamkeerthyy@gmail.com</a>
+            <a href="tel:+94767970739"><i class="bi bi-telephone"></i> +94 76 797 0739</a>
+            <a href="https://www.linkedin.com/in/iamkeerthy" target="_blank" rel="noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="#contact" class="mobile-nav-cta">Contact Me <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="mobile-nav-socials">
+            <a href="https://www.linkedin.com/in/iamkeerthy" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/iamkeerthy" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:iamkeerthyy@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
         </nav>
       </div>
     </header>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
     <main>
 
@@ -69,6 +89,22 @@
 
           <div class="hero-portrait">
             <img src="assets/img/portfolio/your-full-body-image.jpg.png" alt="Dunsan Keerthikan" loading="eager">
+          </div>
+
+          <div class="hero-mobile-card hero-mobile-card-top">
+            <span class="hero-mobile-card-icon"><i class="bi bi-code-slash"></i></span>
+            <div>
+              <strong>Full-stack builds</strong>
+              <span>React, PHP, APIs</span>
+            </div>
+          </div>
+
+          <div class="hero-mobile-card hero-mobile-card-bottom">
+            <span class="hero-mobile-card-icon"><i class="bi bi-bug"></i></span>
+            <div>
+              <strong>QA testing</strong>
+              <span>Playwright, Postman</span>
+            </div>
           </div>
 
           <div class="hero-bottom">
