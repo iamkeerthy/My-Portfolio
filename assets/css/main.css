@@ -306,6 +306,27 @@ body.intro-complete .intro-screen {
   }
 }
 
+@media (max-width: 767px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  [data-aos] {
+    transition-duration: 0.35s !important;
+  }
+
+  .hero-mobile-card {
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    animation-duration: 5.5s;
+  }
+
+  .whatsapp-float::before {
+    animation-duration: 3.2s;
+  }
+}
+
 @media (max-width: 380px) {
   .intro-name {
     font-size: clamp(2.55rem, 13.5vw, 3.4rem);

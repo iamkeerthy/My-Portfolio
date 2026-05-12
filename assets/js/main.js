@@ -27,14 +27,22 @@
 
   /* ── Header: transparent ↔ solid ────────── */
   const header = document.getElementById("header");
+  let heroSwitchPoint = 0;
+
+  function refreshMeasurements() {
+    if (!header || !hero) return;
+    heroSwitchPoint = Math.max(0, hero.offsetTop + hero.offsetHeight - header.offsetHeight - 10);
+  }
 
   function syncHeader() {
     if (!header || !hero) return;
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    header.classList.toggle("scrolled", heroBottom <= header.offsetHeight + 10);
+    header.classList.toggle("scrolled", window.scrollY >= heroSwitchPoint);
   }
 
-  window.addEventListener("load", syncHeader);
+  window.addEventListener("load", () => {
+    refreshMeasurements();
+    syncHeader();
+  });
 
   /* ── Mobile nav toggle ───────────────────── */
   const navToggle = document.getElementById("navToggle");
@@ -104,18 +112,32 @@
 
   /* ── Navmenu scrollspy ───────────────────── */
   const navLinks = document.querySelectorAll(".navmenu a[href^='#']");
+  let navItems = [];
+
+  function refreshNavItems() {
+    navItems = Array.from(navLinks).map((link) => {
+      const sec = document.querySelector(link.hash);
+      if (!sec) return null;
+      return {
+        link,
+        top: sec.offsetTop,
+        bottom: sec.offsetTop + sec.offsetHeight
+      };
+    }).filter(Boolean);
+  }
 
   function scrollspy() {
     const pos = window.scrollY + 80;
-    navLinks.forEach((link) => {
-      const sec = document.querySelector(link.hash);
-      if (!sec) return;
-      const active = pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight;
-      link.classList.toggle("active", active);
+    navItems.forEach((item) => {
+      const active = pos >= item.top && pos < item.bottom;
+      item.link.classList.toggle("active", active);
     });
   }
 
-  window.addEventListener("load", scrollspy);
+  window.addEventListener("load", () => {
+    refreshNavItems();
+    scrollspy();
+  });
 
   let ticking = false;
 
@@ -131,5 +153,10 @@
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    refreshMeasurements();
+    refreshNavItems();
+    onScroll();
+  }, { passive: true });
 
 })();
