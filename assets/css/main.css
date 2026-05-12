@@ -419,6 +419,49 @@ body.intro-complete .intro-screen {
 }
 
 @media (max-width: 767px) {
+  .skill-card {
+    min-height: auto;
+    padding: 1.1rem;
+    gap: 1rem;
+  }
+
+  .skill-head {
+    align-items: flex-start;
+  }
+
+  .skill-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+
+  .skill-cat {
+    font-size: 1.12rem;
+  }
+
+  .skill-pills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .skill-pills span {
+    width: 100%;
+    min-height: 42px;
+    justify-content: center;
+    padding: 0.42rem 0.35rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .skill-pills img,
+  .skill-pills i {
+    width: 15px;
+    height: 15px;
+  }
+
   .hn-first,
   .hn-last {
     font-size: clamp(5rem, 25vw, 9rem);
@@ -813,6 +856,30 @@ body.intro-complete .intro-screen {
 .accent-pills span:hover {
   background: color-mix(in srgb, var(--skill-a) 10%, white);
   color: var(--skill-b);
+}
+
+@media (max-width: 767px) {
+  .skill-pills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .skill-pills span {
+    width: 100%;
+    min-height: 42px;
+    justify-content: center;
+    padding: 0.42rem 0.35rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .skill-pills img,
+  .skill-pills i {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 /* ════════════════════════════════════════════
