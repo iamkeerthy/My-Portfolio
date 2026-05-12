@@ -34,7 +34,6 @@
     header.classList.toggle("scrolled", heroBottom <= header.offsetHeight + 10);
   }
 
-  window.addEventListener("scroll", syncHeader, { passive: true });
   window.addEventListener("load", syncHeader);
 
   /* ── Mobile nav toggle ───────────────────── */
@@ -88,7 +87,6 @@
       scrollTop.classList.toggle("active", window.scrollY > 120);
     }
 
-    window.addEventListener("scroll", toggleScrollTop, { passive: true });
     window.addEventListener("load", toggleScrollTop);
   }
 
@@ -117,7 +115,21 @@
     });
   }
 
-  window.addEventListener("scroll", scrollspy, { passive: true });
   window.addEventListener("load", scrollspy);
+
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      syncHeader();
+      if (scrollTop) scrollTop.classList.toggle("active", window.scrollY > 120);
+      scrollspy();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
 
 })();
