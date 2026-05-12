@@ -419,6 +419,11 @@ body.intro-complete .intro-screen {
 }
 
 @media (max-width: 767px) {
+  .hn-first,
+  .hn-last {
+    font-size: clamp(5rem, 25vw, 9rem);
+  }
+
   .hero-portrait {
     align-items: center;
     justify-content: center;
