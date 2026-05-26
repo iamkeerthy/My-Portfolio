@@ -2,21 +2,21 @@
    DESIGN TOKENS
 ════════════════════════════════════════════ */
 :root {
-  --bg: #fafaf8;
-  --bg-alt: #f3f3f0;
+  --bg: #f6f8fb;
+  --bg-alt: #eef2f6;
   --surface: #ffffff;
-  --hero: #060d0e;
-  --text: #0d0d0d;
-  --muted: #6b7070;
-  --border: rgba(0, 0, 0, 0.07);
-  --accent: #08a8b0;
-  --accent-dark: #068a92;
-  --accent-soft: #ddf3f5;
+  --hero: #0f172a;
+  --text: #0f172a;
+  --muted: #6b7a8a;
+  --border: rgba(15, 23, 42, 0.08);
+  --accent: #0f766e;
+  --accent-dark: #115e59;
+  --accent-soft: #dcf3f1;
   --radius: 20px;
   --radius-sm: 12px;
   --radius-full: 999px;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.10);
+  --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 55px rgba(15, 23, 42, 0.12);
   --transition: 0.25s ease;
 }
 
@@ -611,10 +611,114 @@ body.intro-complete .intro-screen {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
   min-height: 100svh;
-  padding: 7rem 1.25rem 5rem;
+  padding: 5rem 1.25rem 5rem;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-headline {
+  font-size: clamp(2.75rem, 6vw, 4rem);
+  line-height: 1.02;
+  margin-bottom: 1.4rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.hero-text {
+  font-size: 1.03rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.9;
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero-cta,
+.hero-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.7rem;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.hero-cta {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.hero-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+}
+
+.hero-ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.hero-metrics {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  width: 100%;
+  max-width: 780px;
+}
+
+.hero-metrics div {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.2rem 1.3rem;
+}
+
+.hero-metrics strong {
+  display: block;
+  font-size: 1.75rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.hero-metrics span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Big name watermark */
