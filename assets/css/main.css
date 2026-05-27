@@ -1903,3 +1903,133 @@ a.contact-row:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
+/* ═══ EXPERIENCE ═══ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.exp-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.2), box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+}
+
+/* Glow blobs */
+.exp-glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  bottom: -60px;
+  right: -40px;
+  opacity: 0.12;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.exp-card:hover .exp-glow { opacity: 0.22; }
+.exp-glow--teal   { background: #0ea5e9; }
+.exp-glow--purple { background: #8b5cf6; }
+.exp-glow--amber  { background: #f59e0b; }
+
+/* Active/current card border */
+.exp-card--active { border-color: #0ea5e980; }
+.exp-card--purple { border-color: #8b5cf640; }
+.exp-card--amber  { border-color: #f59e0b40; }
+
+.exp-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.exp-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.exp-icon--teal   { background: #e0f2fe; color: #0284c7; }
+.exp-icon--purple { background: #ede9fe; color: #7c3aed; }
+.exp-icon--amber  { background: #fef3c7; color: #d97706; }
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.exp-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2rem;
+}
+.exp-badge--teal   { background: #e0f2fe; color: #0284c7; }
+.exp-badge--purple { background: #ede9fe; color: #7c3aed; }
+.exp-badge--amber  { background: #fef3c7; color: #d97706; }
+
+.exp-period {
+  font-size: 0.75rem;
+  opacity: 0.45;
+}
+
+.exp-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+}
+
+.exp-company {
+  font-size: 0.82rem;
+  opacity: 0.5;
+  margin: 0 0 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.exp-summary {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  line-height: 1.65;
+  margin: 0 0 1.1rem;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-tags span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 2rem;
+}
+.tag--teal   { background: #e0f2fe; color: #0284c7; }
+.tag--purple { background: #ede9fe; color: #7c3aed; }
+.tag--amber  { background: #fef3c7; color: #d97706; }
